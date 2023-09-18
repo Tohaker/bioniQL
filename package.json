@@ -1,0 +1,34 @@
+{
+  "name": "bioniql",
+  "version": "0.1.0",
+  "description": "GraphQL API for the LEGO Bionicle theme",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tohaker/bioniQL.git"
+  },
+  "keywords": [
+    "lego",
+    "bionicle",
+    "graphql"
+  ],
+  "author": "Miles Bardon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tohaker/bioniQL/issues"
+  },
+  "homepage": "https://github.com/Tohaker/bioniQL#readme",
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^18",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "graphql": "^16.8.0"
+  }
+}
