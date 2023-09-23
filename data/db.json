@@ -1,0 +1,76 @@
+{
+  "toa": [
+    {
+      "name": "Pohatu",
+      "powers": {
+        "kanohi": "Kakama",
+        "element": "stone"
+      },
+      "set": {
+        "number": "8531",
+        "parts": 49,
+        "year": 2001
+      }
+    },
+    {
+      "name": "Onua",
+      "powers": {
+        "kanohi": "Pakari",
+        "element": "earth"
+      },
+      "set": {
+        "number": "8532",
+        "parts": 30,
+        "year": 2001
+      }
+    },
+    {
+      "name": "Gali",
+      "powers": {
+        "kanohi": "Kaukau",
+        "element": "water"
+      },
+      "set": {
+        "number": "8533",
+        "parts": 35,
+        "year": 2001
+      }
+    },
+    {
+      "name": "Tahu",
+      "powers": {
+        "kanohi": "Hau",
+        "element": "fire"
+      },
+      "set": {
+        "number": "8534",
+        "parts": 33,
+        "year": 2001
+      }
+    },
+    {
+      "name": "Lewa",
+      "powers": {
+        "kanohi": "Miru",
+        "element": "air"
+      },
+      "set": {
+        "number": "8535",
+        "parts": 36,
+        "year": 2001
+      }
+    },
+    {
+      "name": "Kopaka",
+      "powers": {
+        "kanohi": "Akaku",
+        "element": "ice"
+      },
+      "set": {
+        "number": "8536",
+        "parts": 33,
+        "year": 2001
+      }
+    }
+  ]
+}

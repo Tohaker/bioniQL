@@ -2,10 +2,11 @@
   "name": "bioniql",
   "version": "0.1.0",
   "description": "GraphQL API for the LEGO Bionicle theme",
-  "main": "build/index.js",
+  "main": "build/server.js",
   "scripts": {
     "build": "tsc",
     "start": "node .",
+    "start:db": "json-server --watch data/db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +27,13 @@
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18",
+    "json-server": "^0.17.3",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "graphql": "^16.8.0"
+    "@pothos/core": "^3.37.0",
+    "axios": "^1.5.0",
+    "graphql": "^16.8.0",
+    "graphql-yoga": "^4.0.4"
   }
 }
