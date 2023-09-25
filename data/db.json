@@ -7,8 +7,8 @@
         "element": "stone"
       },
       "set": {
-        "number": "8531",
-        "parts": 49,
+        "sku": "8531",
+        "pieces": 49,
         "year": 2001
       }
     },
@@ -19,8 +19,8 @@
         "element": "earth"
       },
       "set": {
-        "number": "8532",
-        "parts": 30,
+        "sku": "8532",
+        "pieces": 30,
         "year": 2001
       }
     },
@@ -31,8 +31,8 @@
         "element": "water"
       },
       "set": {
-        "number": "8533",
-        "parts": 35,
+        "sku": "8533",
+        "pieces": 35,
         "year": 2001
       }
     },
@@ -43,8 +43,8 @@
         "element": "fire"
       },
       "set": {
-        "number": "8534",
-        "parts": 33,
+        "sku": "8534",
+        "pieces": 33,
         "year": 2001
       }
     },
@@ -55,8 +55,8 @@
         "element": "air"
       },
       "set": {
-        "number": "8535",
-        "parts": 36,
+        "sku": "8535",
+        "pieces": 36,
         "year": 2001
       }
     },
@@ -67,8 +67,8 @@
         "element": "ice"
       },
       "set": {
-        "number": "8536",
-        "parts": 33,
+        "sku": "8536",
+        "pieces": 33,
         "year": 2001
       }
     }

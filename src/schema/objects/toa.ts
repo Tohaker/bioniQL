@@ -2,16 +2,19 @@ import axios from "axios";
 
 import { builder } from "../builder";
 import { Element } from "./element";
-import { DbToa } from "../../types";
+import { DbSet, DbToa } from "../../types";
+import { Set } from "./set";
 
 export class Toa {
   public id: string;
   public name: string;
   public element: Element | null;
+  public set: DbSet;
 
   constructor(toa: DbToa) {
     this.id = Toa.formatID(toa);
     this.name = toa.name;
+    this.set = toa.set;
 
     const _element = toa.powers.element;
 
@@ -22,7 +25,7 @@ export class Toa {
     }
   }
 
-  public static formatID = (toa: DbToa) => `${toa.set.number}-${toa.set.year}`;
+  public static formatID = (toa: DbToa) => `${toa.set.sku}-${toa.set.year}`;
 }
 
 builder.objectType(Toa, {
@@ -35,6 +38,10 @@ builder.objectType(Toa, {
       type: Element,
       nullable: true,
       resolve: (p) => p.element,
+    }),
+    set: t.field({
+      type: Set,
+      resolve: (toa) => new Set(toa.set.sku, toa.set.year, toa.set.pieces),
     }),
   }),
 });

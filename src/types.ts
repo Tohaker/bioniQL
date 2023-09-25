@@ -1,12 +1,16 @@
+export type DbSet = {
+  sku: string;
+  pieces: number;
+  year: number;
+};
+
+export type DbPowers = {
+  kanohi: string;
+  element: string;
+};
+
 export type DbToa = {
   name: string;
-  powers: {
-    kanohi: string;
-    element: string;
-  };
-  set: {
-    number: string;
-    parts: number;
-    year: number;
-  };
+  powers: DbPowers;
+  set: DbSet;
 };
