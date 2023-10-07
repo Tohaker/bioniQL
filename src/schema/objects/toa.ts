@@ -4,12 +4,13 @@ import { builder } from "../builder";
 import { Element } from "./element";
 import { DbSet, DbToa } from "../../types";
 import { Set } from "./set";
+import { DB_HOSTNAME } from "../../constants";
 
 export class Toa {
   public id: string;
   public name: string;
   public element: Element | null;
-  public set: DbSet;
+  public set: string;
 
   constructor(toa: DbToa) {
     this.id = Toa.formatID(toa);
@@ -25,7 +26,7 @@ export class Toa {
     }
   }
 
-  public static formatID = (toa: DbToa) => `${toa.set.sku}-${toa.set.year}`;
+  public static formatID = (toa: DbToa) => toa.set;
 }
 
 builder.objectType(Toa, {
@@ -41,7 +42,15 @@ builder.objectType(Toa, {
     }),
     set: t.field({
       type: Set,
-      resolve: (toa) => new Set(toa.set.sku, toa.set.year, toa.set.pieces),
+      resolve: async (toa) => {
+        const { data } = await axios.get<DbSet[]>(
+          `${DB_HOSTNAME}/sets?sku=${toa.set}`
+        );
+
+        const set = data[0];
+
+        return new Set(toa.set, set.year, set.pieces);
+      },
     }),
   }),
 });
@@ -60,15 +69,14 @@ builder.queryField("toa", (t) =>
     },
     nullable: true,
     resolve: async (_, args) => {
-      const { data } = await axios.get<DbToa[]>("http://localhost:3000/toa");
+      let data: DbToa[] = [];
 
       if (args.name) {
-        const foundToa = data.filter(
-          // Normalise input
-          ({ name }) => name.toLowerCase() === args.name?.toLowerCase()
-        );
-
-        return foundToa.map((toa) => new Toa(toa));
+        ({ data } = await axios.get<DbToa[]>(
+          `${DB_HOSTNAME}/toa?q=${args.name}`
+        ));
+      } else {
+        ({ data } = await axios.get<DbToa[]>(`${DB_HOSTNAME}/toa`));
       }
 
       return data.map((toa) => new Toa(toa));

@@ -6,11 +6,7 @@
         "kanohi": "Kakama",
         "element": "stone"
       },
-      "set": {
-        "sku": "8531",
-        "pieces": 49,
-        "year": 2001
-      }
+      "set": "8531"
     },
     {
       "name": "Onua",
@@ -18,11 +14,7 @@
         "kanohi": "Pakari",
         "element": "earth"
       },
-      "set": {
-        "sku": "8532",
-        "pieces": 30,
-        "year": 2001
-      }
+      "set": "8532"
     },
     {
       "name": "Gali",
@@ -30,11 +22,7 @@
         "kanohi": "Kaukau",
         "element": "water"
       },
-      "set": {
-        "sku": "8533",
-        "pieces": 35,
-        "year": 2001
-      }
+      "set": "8533"
     },
     {
       "name": "Tahu",
@@ -42,11 +30,7 @@
         "kanohi": "Hau",
         "element": "fire"
       },
-      "set": {
-        "sku": "8534",
-        "pieces": 33,
-        "year": 2001
-      }
+      "set": "8534"
     },
     {
       "name": "Lewa",
@@ -54,11 +38,7 @@
         "kanohi": "Miru",
         "element": "air"
       },
-      "set": {
-        "sku": "8535",
-        "pieces": 36,
-        "year": 2001
-      }
+      "set": "8535"
     },
     {
       "name": "Kopaka",
@@ -66,11 +46,15 @@
         "kanohi": "Akaku",
         "element": "ice"
       },
-      "set": {
-        "sku": "8536",
-        "pieces": 33,
-        "year": 2001
-      }
+      "set": "8536"
     }
+  ],
+  "sets": [
+    { "sku": "8531", "pieces": 49, "year": 2001 },
+    { "sku": "8532", "pieces": 30, "year": 2001 },
+    { "sku": "8533", "pieces": 35, "year": 2001 },
+    { "sku": "8534", "pieces": 33, "year": 2001 },
+    { "sku": "8535", "pieces": 36, "year": 2001 },
+    { "sku": "8536", "pieces": 33, "year": 2001 }
   ]
 }
