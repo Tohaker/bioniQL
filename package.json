@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node .",
     "start:db": "json-server --watch data/db.json",
-    "dev": "concurrently -n db,tsc,node \"npm:start:db\" \"npm:build -- --watch\" \"nodemon ./build/server.js\"",
+    "dev": "concurrently -n db,server \"npm:start:db\" \"nodemon ./src/server.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "concurrently": "^8.2.1",
     "json-server": "^0.17.3",
     "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
