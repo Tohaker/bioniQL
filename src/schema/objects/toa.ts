@@ -68,15 +68,13 @@ builder.queryField("toa", (t) =>
       }),
     },
     nullable: true,
-    resolve: async (_, args) => {
+    resolve: async (_, args, { dataSources: { toaApi } }) => {
       let data: DbToa[] = [];
 
       if (args.name) {
-        ({ data } = await axios.get<DbToa[]>(
-          `${DB_HOSTNAME}/toa?q=${args.name}`
-        ));
+        data = await toaApi.getToaByName(args.name);
       } else {
-        ({ data } = await axios.get<DbToa[]>(`${DB_HOSTNAME}/toa`));
+        data = await toaApi.getAllToa();
       }
 
       return data.map((toa) => new Toa(toa));
