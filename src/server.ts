@@ -1,11 +1,7 @@
 import { createServer } from "node:http";
-import { createYoga } from "graphql-yoga";
-import { schema } from "./schema";
-import { context } from "./schema/context";
+import { yoga } from "./yoga";
 
 const PORT = 4000;
-
-const yoga = createYoga({ schema, context });
 
 const server = createServer(yoga);
 
