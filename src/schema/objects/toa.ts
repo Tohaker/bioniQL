@@ -1,10 +1,7 @@
-import axios from "axios";
-
 import { builder } from "../builder";
 import { Element } from "./element";
-import { DbSet, DbToa } from "../../types";
+import { DbToa } from "../../types";
 import { Set } from "./set";
-import { DB_HOSTNAME } from "../../constants";
 
 export class Toa {
   public id: string;
@@ -42,14 +39,11 @@ builder.objectType(Toa, {
     }),
     set: t.field({
       type: Set,
-      resolve: async (toa) => {
-        const { data } = await axios.get<DbSet[]>(
-          `${DB_HOSTNAME}/sets?sku=${toa.set}`
-        );
+      nullable: true,
+      resolve: async (toa, _, { dataSources: { setApi } }) => {
+        const set = await setApi.getSetBySku(toa.set);
 
-        const set = data[0];
-
-        return new Set(toa.set, set.year, set.pieces);
+        return set ? new Set(toa.set, set.year, set.pieces) : null;
       },
     }),
   }),

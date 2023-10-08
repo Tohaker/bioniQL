@@ -1,8 +1,4 @@
-import axios from "axios";
-import { DB_HOSTNAME } from "../../constants";
-import { DbSet } from "../../types";
 import { builder } from "../builder";
-import { URL } from "url";
 
 export class Set {
   constructor(public sku: string, public year: number, public pieces: number) {}
@@ -18,7 +14,7 @@ builder.objectType(Set, {
     instructions: t.string({
       description: "URL for Official set instructions",
       nullable: true,
-      resolve: async (set) =>
+      resolve: (set) =>
         `https://www.lego.com/service/buildinginstructions/${set.sku}`,
     }),
   }),
@@ -36,17 +32,10 @@ builder.queryField("set", (t) =>
       }),
     },
     nullable: true,
-    resolve: async (_, args) => {
-      const url = new URL(DB_HOSTNAME);
-      url.pathname = "/sets";
-      url.searchParams.append("sku", args.id);
-      url.searchParams.append("_limit", "1");
+    resolve: async (_, args, { dataSources: { setApi } }) => {
+      const set = await setApi.getSetBySku(args.id);
 
-      const { data } = await axios.get<DbSet[]>(url.href);
-
-      if (!data.length) return null;
-
-      return new Set(data[0].sku, data[0].year, data[0].pieces);
+      return set ? new Set(set.sku, set.year, set.pieces) : null;
     },
   })
 );
