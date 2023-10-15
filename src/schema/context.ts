@@ -1,10 +1,10 @@
 import { YogaInitialContext } from "graphql-yoga";
-import { ToaAPI } from "./dataSources/toaApi";
+import { MatoranAPI } from "./dataSources/matoranApi";
 import { SetAPI } from "./dataSources/setApi";
 
 export const context = async (initialContext: YogaInitialContext) => ({
   dataSources: {
-    toaApi: new ToaAPI(),
+    matoranApi: new MatoranAPI(),
     setApi: new SetAPI(),
   },
 });

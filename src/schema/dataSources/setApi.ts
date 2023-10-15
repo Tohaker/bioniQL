@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from "axios";
 import { DB_HOSTNAME } from "../../constants";
 import { DbSet } from "../../types";
 
-const SET_PATH = "/sets";
+const PATH = "/sets";
 
 export class SetAPI {
   private client: AxiosInstance;
@@ -14,12 +14,12 @@ export class SetAPI {
   }
 
   public async getAllSets() {
-    const { data } = await this.client.get<DbSet[]>(SET_PATH);
+    const { data } = await this.client.get<DbSet[]>(PATH);
     return data;
   }
 
   public async getSetBySku(sku: string) {
-    const { data } = await this.client.get<DbSet[]>(SET_PATH, {
+    const { data } = await this.client.get<DbSet[]>(PATH, {
       params: { sku, _limit: 1 },
     });
 

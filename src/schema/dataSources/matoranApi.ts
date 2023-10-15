@@ -2,9 +2,9 @@ import axios, { AxiosInstance } from "axios";
 import { DB_HOSTNAME } from "../../constants";
 import { DbToa } from "../../types";
 
-const TOA_PATH = "/toa";
+const PATH = "/matoran";
 
-export class ToaAPI {
+export class MatoranAPI {
   private client: AxiosInstance;
 
   constructor() {
@@ -14,13 +14,15 @@ export class ToaAPI {
   }
 
   public async getAllToa() {
-    const { data } = await this.client.get<DbToa[]>(TOA_PATH);
+    const { data } = await this.client.get<DbToa[]>(PATH, {
+      params: { group: "toa" },
+    });
     return data;
   }
 
   public async getToaByName(name: string) {
-    const { data } = await this.client.get<DbToa[]>(TOA_PATH, {
-      params: { q: name },
+    const { data } = await this.client.get<DbToa[]>(PATH, {
+      params: { group: "toa", q: name },
     });
     return data;
   }

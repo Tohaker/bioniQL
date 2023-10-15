@@ -62,13 +62,13 @@ builder.queryField("toa", (t) =>
       }),
     },
     nullable: true,
-    resolve: async (_, args, { dataSources: { toaApi } }) => {
+    resolve: async (_, args, { dataSources: { matoranApi } }) => {
       let data: DbToa[] = [];
 
       if (args.name) {
-        data = await toaApi.getToaByName(args.name);
+        data = await matoranApi.getToaByName(args.name);
       } else {
-        data = await toaApi.getAllToa();
+        data = await matoranApi.getAllToa();
       }
 
       return data.map((toa) => new Toa(toa));
