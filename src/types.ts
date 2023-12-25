@@ -9,7 +9,7 @@ export type DbPowers = {
   element: string;
 };
 
-export type DbToa = {
+export type DbMatoran = {
   name: string;
   powers: DbPowers;
   set: string;

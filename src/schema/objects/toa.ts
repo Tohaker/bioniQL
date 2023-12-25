@@ -1,6 +1,6 @@
 import { builder } from "../builder";
 import { Element } from "./element";
-import { DbToa } from "../../types";
+import { DbMatoran } from "../../types";
 import { Set } from "./set";
 
 export class Toa {
@@ -9,7 +9,7 @@ export class Toa {
   public element: Element | null;
   public set: string;
 
-  constructor(toa: DbToa) {
+  constructor(toa: DbMatoran) {
     this.id = Toa.formatID(toa);
     this.name = toa.name;
     this.set = toa.set;
@@ -23,7 +23,7 @@ export class Toa {
     }
   }
 
-  public static formatID = (toa: DbToa) => toa.set;
+  public static formatID = (toa: DbMatoran) => toa.set;
 }
 
 builder.objectType(Toa, {
@@ -63,7 +63,7 @@ builder.queryField("toa", (t) =>
     },
     nullable: true,
     resolve: async (_, args, { dataSources: { matoranApi } }) => {
-      let data: DbToa[] = [];
+      let data: DbMatoran[] = [];
 
       if (args.name) {
         data = await matoranApi.getToaByName(args.name);
