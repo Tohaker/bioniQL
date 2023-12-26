@@ -43,7 +43,7 @@
     "json-server": "^0.17.4",
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@pothos/core": "^3.41.0",
