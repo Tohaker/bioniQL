@@ -9,7 +9,7 @@ module.exports = {
       },
     },
     {
-      displayName: "INTEGRATION",
+      displayName: "E2E",
       globalSetup: "<rootDir>/tests/setup.ts",
       globalTeardown: "<rootDir>/tests/teardown.ts",
       testMatch: ["<rootDir>/tests/**/*.test.ts"],
