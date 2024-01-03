@@ -1,5 +1,7 @@
 # bioniQL
 
+![BioniQL Logo](./docs/logo.png)
+
 [![Test](https://github.com/Tohaker/bioniQL/actions/workflows/test.yml/badge.svg)](https://github.com/Tohaker/bioniQL/actions/workflows/test.yml)
 
 > Pronounced the same as "Bionicle"
