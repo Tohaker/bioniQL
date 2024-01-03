@@ -14,3 +14,10 @@ export type DbToa = {
   powers: DbPowers;
   set: string;
 };
+
+export type DbLocation = {
+  id: string;
+  island: string;
+  region: string;
+  wiki_slug: string;
+};

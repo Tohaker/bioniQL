@@ -59,6 +59,14 @@
       "set": "8540"
     }
   ],
+  "locations": [
+    {
+      "id": "1",
+      "island": "Mata Nui",
+      "region": "Ta-Wahi",
+      "wiki_slug": "Ta-Wahi"
+    }
+  ],
   "sets": [
     { "sku": "8531", "pieces": 49, "year": 2001 },
     { "sku": "8532", "pieces": 30, "year": 2001 },
