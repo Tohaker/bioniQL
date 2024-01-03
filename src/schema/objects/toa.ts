@@ -1,6 +1,6 @@
 import { builder } from "../builder";
 import { Element } from "./element";
-import { DbMatoran } from "../../types";
+import { DbToa } from "../../types";
 import { Set } from "./set";
 
 export class Toa {
@@ -9,7 +9,7 @@ export class Toa {
   public element: Element | null;
   public set: string;
 
-  constructor(toa: DbMatoran) {
+  constructor(toa: DbToa) {
     this.id = Toa.formatID(toa);
     this.name = toa.name;
     this.set = toa.set;
@@ -23,14 +23,14 @@ export class Toa {
     }
   }
 
-  public static formatID = (toa: DbMatoran) => toa.set;
+  public static formatID = (toa: DbToa) => toa.set;
 }
 
 builder.objectType(Toa, {
   name: "Toa",
   description: "Biomechanical being possessing an elemental ability",
   fields: (t) => ({
-    id: t.exposeString("id"),
+    id: t.exposeID("id"),
     name: t.exposeString("name"),
     element: t.field({
       type: Element,
@@ -62,13 +62,13 @@ builder.queryField("toa", (t) =>
       }),
     },
     nullable: true,
-    resolve: async (_, args, { dataSources: { matoranApi } }) => {
-      let data: DbMatoran[] = [];
+    resolve: async (_, args, { dataSources: { toaApi } }) => {
+      let data: DbToa[] = [];
 
       if (args.name) {
-        data = await matoranApi.getToaByName(args.name);
+        data = await toaApi.getToaByName(args.name);
       } else {
-        data = await matoranApi.getAllToa();
+        data = await toaApi.getAllToa();
       }
 
       return data.map((toa) => new Toa(toa));

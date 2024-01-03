@@ -1,9 +1,7 @@
 {
-  "matoran": [
+  "toa": [
     {
       "name": "Pohatu",
-      "group": "toa",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Kakama",
         "element": "stone"
@@ -12,8 +10,6 @@
     },
     {
       "name": "Onua",
-      "group": "toa",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Pakari",
         "element": "earth"
@@ -22,8 +18,6 @@
     },
     {
       "name": "Gali",
-      "group": "toa",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Kaukau",
         "element": "water"
@@ -32,8 +26,6 @@
     },
     {
       "name": "Tahu",
-      "group": "toa",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Hau",
         "element": "fire"
@@ -42,8 +34,6 @@
     },
     {
       "name": "Lewa",
-      "group": "toa",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Miru",
         "element": "air"
@@ -52,18 +42,16 @@
     },
     {
       "name": "Kopaka",
-      "group": "toa",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Akaku",
         "element": "ice"
       },
       "set": "8536"
-    },
+    }
+  ],
+  "turaga": [
     {
       "name": "Vakama",
-      "group": "turaga",
-      "homeland": "mata nui",
       "powers": {
         "kanohi": "Huna",
         "element": "fire"
