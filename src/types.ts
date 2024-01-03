@@ -12,6 +12,7 @@ export type DbPowers = {
 export type DbToa = {
   name: string;
   powers: DbPowers;
+  location: string;
   set: string;
 };
 

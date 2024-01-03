@@ -1,18 +1,16 @@
 import { builder } from "../builder";
+import { Character } from "./character";
 import { Element } from "./element";
 import { DbToa } from "../../types";
-import { Set } from "./set";
 
-export class Toa {
+export class Toa extends Character {
   public id: string;
-  public name: string;
   public element: Element | null;
-  public set: string;
 
   constructor(toa: DbToa) {
+    super(toa.location, toa.name, toa.set);
+
     this.id = Toa.formatID(toa);
-    this.name = toa.name;
-    this.set = toa.set;
 
     const _element = toa.powers.element;
 
@@ -29,6 +27,8 @@ export class Toa {
 builder.objectType(Toa, {
   name: "Toa",
   description: "Biomechanical being possessing an elemental ability",
+  interfaces: [Character],
+  isTypeOf: (value) => value instanceof Toa,
   fields: (t) => ({
     id: t.exposeID("id"),
     name: t.exposeString("name"),
@@ -36,15 +36,6 @@ builder.objectType(Toa, {
       type: Element,
       nullable: true,
       resolve: (p) => p.element,
-    }),
-    set: t.field({
-      type: Set,
-      nullable: true,
-      resolve: async (toa, _, { dataSources: { setApi } }) => {
-        const set = await setApi.getSetBySku(toa.set);
-
-        return set ? new Set(toa.set, set.year, set.pieces) : null;
-      },
     }),
   }),
 });
