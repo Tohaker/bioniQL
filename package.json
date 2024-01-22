@@ -33,7 +33,7 @@
     "@graphql-codegen/client-preset": "^4.1.0",
     "@graphql-tools/executor-http": "^1.0.7",
     "@swc/core": "^1.3.104",
-    "@swc/jest": "^0.2.30",
+    "@swc/jest": "^0.2.31",
     "@tsconfig/node18": "^18.2.2",
     "@types/jest": "^29.5.11",
     "@types/json-server": "^0.14.7",
