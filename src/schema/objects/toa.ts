@@ -1,6 +1,6 @@
 import { builder } from "../builder";
 import { Character } from "./character";
-import { Element } from "./element";
+import { Element, getElementFromString } from "./element";
 import { DbToa } from "../../types";
 
 export class Toa extends Character {
@@ -10,18 +10,9 @@ export class Toa extends Character {
   constructor(toa: DbToa) {
     super(toa.location, toa.name, toa.set);
 
-    this.id = Toa.formatID(toa);
-
-    const _element = toa.powers.element;
-
-    if (_element.toUpperCase() in Element) {
-      this.element = Element[_element.toUpperCase() as keyof typeof Element];
-    } else {
-      this.element = null;
-    }
+    this.id = toa.set;
+    this.element = getElementFromString(toa.powers.element);
   }
-
-  public static formatID = (toa: DbToa) => toa.set;
 }
 
 builder.objectType(Toa, {
@@ -39,30 +30,3 @@ builder.objectType(Toa, {
     }),
   }),
 });
-
-builder.queryField("toa", (t) =>
-  t.field({
-    type: [Toa],
-    description: "Retrieve Toa heroes",
-    args: {
-      name: t.arg({
-        type: "String",
-        required: false,
-        description:
-          "Name of the Toa to find. Omit to return all Toa in the database",
-      }),
-    },
-    nullable: true,
-    resolve: async (_, args, { dataSources: { toaApi } }) => {
-      let data: DbToa[] = [];
-
-      if (args.name) {
-        data = await toaApi.getToaByName(args.name);
-      } else {
-        data = await toaApi.getAllToa();
-      }
-
-      return data.map((toa) => new Toa(toa));
-    },
-  })
-);

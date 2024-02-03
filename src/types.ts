@@ -16,6 +16,14 @@ export type DbToa = {
   set: string;
 };
 
+export type DbTuraga = {
+  name: string;
+  powers: DbPowers;
+  tool: string;
+  location: string;
+  set: string;
+};
+
 export type DbLocation = {
   id: string;
   island: string;

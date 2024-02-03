@@ -1,5 +1,6 @@
 import { builder } from "./builder";
 import "./objects";
+import "./queries";
 
 builder.queryType({});
 

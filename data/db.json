@@ -6,6 +6,7 @@
         "kanohi": "Kakama",
         "element": "stone"
       },
+      "location": "4",
       "set": "8531"
     },
     {
@@ -14,6 +15,7 @@
         "kanohi": "Pakari",
         "element": "earth"
       },
+      "location": "5",
       "set": "8532"
     },
     {
@@ -22,6 +24,7 @@
         "kanohi": "Kaukau",
         "element": "water"
       },
+      "location": "2",
       "set": "8533"
     },
     {
@@ -39,6 +42,7 @@
         "kanohi": "Miru",
         "element": "air"
       },
+      "location": "3",
       "set": "8535"
     },
     {
@@ -47,6 +51,7 @@
         "kanohi": "Akaku",
         "element": "ice"
       },
+      "location": "6",
       "set": "8536"
     }
   ],
@@ -57,7 +62,59 @@
         "kanohi": "Huna",
         "element": "fire"
       },
+      "tool": "Firestaff",
+      "location": "1",
       "set": "8540"
+    },
+    {
+      "name": "Matau",
+      "powers": {
+        "kanohi": "Mahiki",
+        "element": "air"
+      },
+      "tool": "Kau Kau Staff",
+      "location": "3",
+      "set": "8541"
+    },
+    {
+      "name": "Onewa",
+      "powers": {
+        "kanohi": "Komau",
+        "element": "stone"
+      },
+      "tool": "Stone Hammer",
+      "location": "4",
+      "set": "8542"
+    },
+    {
+      "name": "Nokama",
+      "powers": {
+        "kanohi": "Rau",
+        "element": "water"
+      },
+      "tool": "Trident",
+      "location": "2",
+      "set": "8543"
+    },
+    {
+      "name": "Nuju",
+      "powers": {
+        "kanohi": "Matatu",
+        "element": "ice"
+      },
+      "tool": "Ice Pick",
+      "location": "6",
+      "set": "8544"
+    },
+    {
+      "name": "Whenua",
+      "powers": {
+        "kanohi": "Ruru",
+        "element": "earth"
+      },
+      "tool": "Drill of Onua",
+      "location": "5",
+      "set": "8545"
     }
   ],
   "locations": [
@@ -66,6 +123,36 @@
       "island": "Mata Nui",
       "region": "Ta-Wahi",
       "wiki_slug": "Ta-Wahi"
+    },
+    {
+      "id": "2",
+      "island": "Mata Nui",
+      "region": "Ga-Wahi",
+      "wiki_slug": "Ga-Wahi"
+    },
+    {
+      "id": "3",
+      "island": "Mata Nui",
+      "region": "Le-Wahi",
+      "wiki_slug": "Le-Wahi"
+    },
+    {
+      "id": "4",
+      "island": "Mata Nui",
+      "region": "Po-Wahi",
+      "wiki_slug": "Po-Wahi"
+    },
+    {
+      "id": "5",
+      "island": "Mata Nui",
+      "region": "Onu-Wahi",
+      "wiki_slug": "Onu-Wahi"
+    },
+    {
+      "id": "6",
+      "island": "Mata Nui",
+      "region": "Ko-Wahi",
+      "wiki_slug": "Ko-Wahi"
     }
   ],
   "sets": [
@@ -75,6 +162,11 @@
     { "sku": "8534", "pieces": 33, "year": 2001 },
     { "sku": "8535", "pieces": 36, "year": 2001 },
     { "sku": "8536", "pieces": 33, "year": 2001 },
-    { "sku": "8540", "pieces": 27, "year": 2001 }
+    { "sku": "8540", "pieces": 27, "year": 2001 },
+    { "sku": "8541", "pieces": 26, "year": 2001 },
+    { "sku": "8542", "pieces": 30, "year": 2001 },
+    { "sku": "8543", "pieces": 28, "year": 2001 },
+    { "sku": "8544", "pieces": 30, "year": 2001 },
+    { "sku": "8545", "pieces": 28, "year": 2001 }
   ]
 }

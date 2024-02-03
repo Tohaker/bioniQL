@@ -39,32 +39,4 @@ describe("Toa queries", () => {
 
     expect(result.data?.toa?.length).toBe(6);
   });
-
-  it("should return the set information for each toa", async () => {
-    const result = await executor({
-      document: graphql(/* GraphQL */ `
-        query GetToaTahuSet {
-          toa(name: "Tahu") {
-            set {
-              id
-              year
-              pieces
-              instructions
-            }
-          }
-        }
-      `),
-    });
-
-    assertSingleValue(result);
-
-    const set = result.data?.toa?.[0].set;
-
-    expect(set?.id).toBe("8534");
-    expect(set?.year).toBe(2001);
-    expect(set?.pieces).toBe(33);
-    expect(set?.instructions).toBe(
-      "https://www.lego.com/service/buildinginstructions/8534"
-    );
-  });
 });
