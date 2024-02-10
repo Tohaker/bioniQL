@@ -1,0 +1,10 @@
+{
+  "schema": "./schema.graphql",
+  "documents": ["tests/**/*.test.ts"],
+  "require": ["ts-node/register"],
+  "extensions": {
+    "languageService": {
+      "cacheSchemaFileForLookup": true
+    }
+  }
+}

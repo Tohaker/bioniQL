@@ -8,6 +8,9 @@ const config: CodegenConfig = {
     "./tests/gql/": {
       preset: "client-preset",
     },
+    "./schema.graphql": {
+      plugins: ["schema-ast"],
+    },
   },
 };
 

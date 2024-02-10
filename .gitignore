@@ -134,3 +134,4 @@ build
 
 # codegen files
 tests/gql/
+schema.graphql

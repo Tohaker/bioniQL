@@ -31,6 +31,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/client-preset": "^4.2.2",
+    "@graphql-codegen/schema-ast": "^4.0.2",
     "@graphql-tools/executor-http": "^1.0.7",
     "@swc/core": "^1.4.0",
     "@swc/jest": "^0.2.36",
