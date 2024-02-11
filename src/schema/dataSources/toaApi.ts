@@ -24,4 +24,13 @@ export class ToaAPI {
     });
     return data;
   }
+
+  public async createToa(newToa: DbToa) {
+    const { data } = await this.client.post<DbToa>(PATH, newToa, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return data;
+  }
 }

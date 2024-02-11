@@ -1,4 +1,5 @@
 import { graphql } from "./gql";
+import { CharacterTeam, Element } from "./gql/graphql";
 import {
   executor,
   assertSingleValue,
@@ -167,6 +168,55 @@ describe("Character queries", () => {
         expect(c?.element).toEqual(expect.any(String));
         expect(c?.tool).toEqual(expect.any(String));
       });
+    });
+  });
+});
+
+describe("Character mutations", () => {
+  it("should create a new toa character", async () => {
+    const result = await executor({
+      document: graphql(/* GraphQL */ `
+        mutation CreateNewToaCharacter($input: CreateCharacterInput!) {
+          createCharacter(input: $input) {
+            ... on Toa {
+              id
+              name
+              location {
+                about
+                id
+                island
+                region
+              }
+              element
+            }
+          }
+        }
+      `),
+      variables: {
+        input: {
+          element: Element.Fire,
+          location: "1",
+          name: "Bonky McBonkface",
+          team: CharacterTeam.Toa,
+          set: "1234",
+        },
+      },
+    });
+
+    assertSingleValue(result);
+
+    const newToa = result.data?.createCharacter;
+
+    expect(newToa).toEqual({
+      name: "Bonky McBonkface",
+      id: "1234",
+      element: "FIRE",
+      location: {
+        about: "https://biosector01.com/wiki/Ta-Wahi",
+        id: "1",
+        island: "Mata Nui",
+        region: "Ta-Wahi",
+      },
     });
   });
 });

@@ -37,6 +37,6 @@ describe("Toa queries", () => {
 
     assertSingleValue(result);
 
-    expect(result.data?.toa?.length).toBe(6);
+    expect(result.data?.toa?.length).toBeGreaterThanOrEqual(6);
   });
 });

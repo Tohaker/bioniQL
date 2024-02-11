@@ -24,4 +24,13 @@ export class TuragaAPI {
     });
     return data;
   }
+
+  public async createTuraga(newTuraga: DbTuraga) {
+    const { data } = await this.client.post<DbTuraga>(PATH, newTuraga, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return data;
+  }
 }

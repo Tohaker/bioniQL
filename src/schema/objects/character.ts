@@ -2,6 +2,15 @@ import { builder } from "../builder";
 import { Location } from "./location";
 import { Set } from "./set";
 
+export enum CharacterTeam {
+  TOA,
+  TURAGA,
+}
+
+builder.enumType(CharacterTeam, {
+  name: "CharacterTeam",
+});
+
 export class Character {
   locId: string;
   name: string;

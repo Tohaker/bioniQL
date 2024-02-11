@@ -8,8 +8,8 @@
     "check:types": "tsc --noEmit",
     "codegen": "graphql-codegen",
     "start": "node .",
-    "start:db": "json-server --watch data/db.json",
-    "dev": "concurrently -n db,server \"npm:start:db\" \"nodemon ./src/server.ts\"",
+    "start:db": "json-server --watch data/db.js",
+    "dev": "concurrently -n db,server \"npm:start:db\" \"nodemon -L src/server.ts\"",
     "pretest": "npm run codegen",
     "test": "jest"
   },

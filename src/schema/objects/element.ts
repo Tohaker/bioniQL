@@ -17,6 +17,10 @@ export const getElementFromString = (element: string) => {
   }
 };
 
+export const getStringFromElement = (element: Element) => {
+  return Element[element];
+};
+
 builder.enumType(Element, {
   name: "Element",
 });
