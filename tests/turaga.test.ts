@@ -1,12 +1,12 @@
 import { graphql } from "./gql";
 import { executor, assertSingleValue } from "./utils/testUtils";
 
-describe("Toa queries", () => {
-  it("should return the correct toa when searching by name", async () => {
+describe("Turaga queries", () => {
+  it("should return the correct turaga when searching by name", async () => {
     const result = await executor({
       document: graphql(/* GraphQL */ `
-        query GetToaTahu {
-          toa(name: "Tahu") {
+        query GetTuragaVakama {
+          turaga(name: "Vakama") {
             id
             name
             element
@@ -17,18 +17,18 @@ describe("Toa queries", () => {
 
     assertSingleValue(result);
 
-    const toa = result.data?.toa?.[0];
+    const turaga = result.data?.turaga?.[0];
 
-    expect(toa?.name).toBe("Tahu");
-    expect(toa?.id).toBe("8534");
-    expect(toa?.element).toBe("FIRE");
+    expect(turaga?.name).toBe("Vakama");
+    expect(turaga?.id).toBe("8540");
+    expect(turaga?.element).toBe("FIRE");
   });
 
-  it("should return all toa when the name argument is excluded", async () => {
+  it("should return all turaga when the name argument is excluded", async () => {
     const result = await executor({
       document: graphql(/* GraphQL */ `
-        query GetAllToa {
-          toa {
+        query GetAllTuraga {
+          turaga {
             id
           }
         }
@@ -37,27 +37,26 @@ describe("Toa queries", () => {
 
     assertSingleValue(result);
 
-    expect(result.data?.toa?.length).toBeGreaterThanOrEqual(6);
+    expect(result.data?.turaga?.length).toBeGreaterThanOrEqual(6);
   });
 });
 
-describe("Toa mutations", () => {
-  it("should update a toa", async () => {
+describe("Turaga mutations", () => {
+  it("should update a turaga", async () => {
     const newName = "Haha wind fly";
 
     const result = await executor({
       document: graphql(/* GraphQL */ `
-        mutation UpdateToaLewa($input: UpdateToaInput!) {
-          updateToa(input: $input) {
+        mutation UpdateTuragaMatau($input: UpdateTuragaInput!) {
+          updateTuraga(input: $input) {
             id
             name
-            element
           }
         }
       `),
       variables: {
         input: {
-          id: "8535",
+          id: "8541",
           name: newName,
         },
       },
@@ -65,21 +64,21 @@ describe("Toa mutations", () => {
 
     assertSingleValue(result);
 
-    expect(result.data?.updateToa.name).toEqual(newName);
+    expect(result.data?.updateTuraga.name).toEqual(newName);
   });
 
-  it("should throw an error when trying to update a non-existant toa", async () => {
+  it("should throw an error when trying to update a non-existant turaga", async () => {
     const result = await executor({
       document: graphql(/* GraphQL */ `
-        mutation UpdateUnknownToa($input: UpdateToaInput!) {
-          updateToa(input: $input) {
+        mutation UpdateUnknownTuraga($input: UpdateTuragaInput!) {
+          updateTuraga(input: $input) {
             id
           }
         }
       `),
       variables: {
         input: {
-          id: "4321",
+          id: "1234",
           name: "new name",
         },
       },
@@ -88,7 +87,7 @@ describe("Toa mutations", () => {
     assertSingleValue(result);
 
     expect(result.errors?.[0].message).toEqual(
-      "Toa with ID 4321 was not found"
+      "Turaga with ID 1234 was not found"
     );
   });
 });

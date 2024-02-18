@@ -18,6 +18,11 @@ export class ToaAPI {
     return data;
   }
 
+  public async getToaById(id: string | number) {
+    const { data } = await this.client.get<DbToa>(`${PATH}/${id}`);
+    return data;
+  }
+
   public async getToaByName(name: string) {
     const { data } = await this.client.get<DbToa[]>(PATH, {
       params: { q: name },
@@ -27,6 +32,15 @@ export class ToaAPI {
 
   public async createToa(newToa: DbToa) {
     const { data } = await this.client.post<DbToa>(PATH, newToa, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return data;
+  }
+
+  public async updateToa(id: string | number, updatedToa: DbToa) {
+    const { data } = await this.client.put<DbToa>(`${PATH}/${id}`, updatedToa, {
       headers: {
         "Content-Type": "application/json",
       },

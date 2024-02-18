@@ -18,6 +18,11 @@ export class TuragaAPI {
     return data;
   }
 
+  public async getTuragaById(id: string | number) {
+    const { data } = await this.client.get<DbTuraga>(`${PATH}/${id}`);
+    return data;
+  }
+
   public async getTuragaByName(name: string) {
     const { data } = await this.client.get<DbTuraga[]>(PATH, {
       params: { q: name },
@@ -31,6 +36,19 @@ export class TuragaAPI {
         "Content-Type": "application/json",
       },
     });
+    return data;
+  }
+
+  public async updateTuraga(id: string | number, updatedTuraga: DbTuraga) {
+    const { data } = await this.client.put<DbTuraga>(
+      `${PATH}/${id}`,
+      updatedTuraga,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     return data;
   }
 }
