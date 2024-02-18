@@ -219,4 +219,54 @@ describe("Character mutations", () => {
       },
     });
   });
+
+  it("should create a new turaga character", async () => {
+    const result = await executor({
+      document: graphql(/* GraphQL */ `
+        mutation CreateNewTuragaCharacter($input: CreateCharacterInput!) {
+          createCharacter(input: $input) {
+            ... on Turaga {
+              id
+              name
+              location {
+                about
+                id
+                island
+                region
+              }
+              element
+              tool
+            }
+          }
+        }
+      `),
+      variables: {
+        input: {
+          element: Element.Fire,
+          location: "1",
+          name: "Bonky McBonkface",
+          team: CharacterTeam.Turaga,
+          set: "1234",
+          tool: "Big stick",
+        },
+      },
+    });
+
+    assertSingleValue(result);
+
+    const newTuraga = result.data?.createCharacter;
+
+    expect(newTuraga).toEqual({
+      name: "Bonky McBonkface",
+      id: "1234",
+      element: "FIRE",
+      location: {
+        about: "https://biosector01.com/wiki/Ta-Wahi",
+        id: "1",
+        island: "Mata Nui",
+        region: "Ta-Wahi",
+      },
+      tool: "Big stick",
+    });
+  });
 });
