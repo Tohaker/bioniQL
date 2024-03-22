@@ -37,13 +37,13 @@ $ npm run dev
 
 Updating the database file or the source code will cause the respective process to restart.
 
-You can find out more on using the server in these pages;
+You can find out more about using the server on these pages;
 
 - [Authorization](./docs/authorization.md)
 
 ### Testing
 
-End to end tests are provided to demonstrate features of the server. If you want examples on which requests you can send to the server, this should be your first port of call.
+End-to-end tests are provided to demonstrate the features of the server. If you want examples of which requests you can send to the server, this should be your first port of call.
 
 You can run the tests with;
 
