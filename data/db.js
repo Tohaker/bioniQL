@@ -230,5 +230,15 @@ module.exports = function () {
         year: 2001,
       },
     ],
+    users: [
+      {
+        id: "a444ab00-9b66-420c-bfdf-87c53e76917d",
+        type: "ADMIN",
+      },
+      {
+        id: "1",
+        type: "GUEST",
+      },
+    ],
   };
 };
