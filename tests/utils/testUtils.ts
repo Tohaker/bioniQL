@@ -1,10 +1,17 @@
 import { buildHTTPExecutor } from "@graphql-tools/executor-http";
 
 import { yoga } from "../../src/yoga";
+import { ADMIN_ID } from "./constants";
 
 export const executor = buildHTTPExecutor({
   fetch: yoga.fetch,
+  headers: {
+    "x-user-id": ADMIN_ID,
+  },
 });
+
+export const createExecutor = (headers: Record<string, string>) =>
+  buildHTTPExecutor({ fetch: yoga.fetch, headers });
 
 export function assertSingleValue<TValue extends object>(
   value: TValue | AsyncIterable<TValue>

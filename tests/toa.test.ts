@@ -1,5 +1,5 @@
 import { graphql } from "./gql";
-import { executor, assertSingleValue } from "./utils/testUtils";
+import { executor, assertSingleValue, createExecutor } from "./utils/testUtils";
 
 describe("Toa queries", () => {
   it("should return the correct toa when searching by name", async () => {
@@ -42,19 +42,21 @@ describe("Toa queries", () => {
 });
 
 describe("Toa mutations", () => {
+  const updateToaMutation = graphql(/* GraphQL */ `
+    mutation UpdateToaLewa($input: UpdateToaInput!) {
+      updateToa(input: $input) {
+        id
+        name
+        element
+      }
+    }
+  `);
+
   it("should update a toa", async () => {
     const newName = "Haha wind fly";
 
     const result = await executor({
-      document: graphql(/* GraphQL */ `
-        mutation UpdateToaLewa($input: UpdateToaInput!) {
-          updateToa(input: $input) {
-            id
-            name
-            element
-          }
-        }
-      `),
+      document: updateToaMutation,
       variables: {
         input: {
           id: "8535",
@@ -90,5 +92,35 @@ describe("Toa mutations", () => {
     expect(result.errors?.[0].message).toEqual(
       "Toa with ID 4321 was not found"
     );
+  });
+
+  it("should throw an error when the user is not an admin", async () => {
+    const guestExecutor = createExecutor({
+      "x-user-id": "",
+    });
+
+    const newName = "Haha wind fly";
+
+    const result = await guestExecutor({
+      document: updateToaMutation,
+      variables: {
+        input: {
+          id: "8535",
+          name: newName,
+        },
+      },
+    });
+
+    assertSingleValue(result);
+
+    expect(result.data).toBeUndefined();
+    expect(result.errors).toEqual([
+      {
+        extensions: {
+          code: "FORBIDDEN",
+        },
+        message: "You must be an admin to access this resource.",
+      },
+    ]);
   });
 });

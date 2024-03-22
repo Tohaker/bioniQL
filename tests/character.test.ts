@@ -4,6 +4,7 @@ import {
   executor,
   assertSingleValue,
   assertCharacters,
+  createExecutor,
 } from "./utils/testUtils";
 
 describe("Character queries", () => {
@@ -173,25 +174,27 @@ describe("Character queries", () => {
 });
 
 describe("Character mutations", () => {
+  const createNewToaCharacter = graphql(/* GraphQL */ `
+    mutation CreateNewToaCharacter($input: CreateCharacterInput!) {
+      createCharacter(input: $input) {
+        ... on Toa {
+          id
+          name
+          location {
+            about
+            id
+            island
+            region
+          }
+          element
+        }
+      }
+    }
+  `);
+
   it("should create a new toa character", async () => {
     const result = await executor({
-      document: graphql(/* GraphQL */ `
-        mutation CreateNewToaCharacter($input: CreateCharacterInput!) {
-          createCharacter(input: $input) {
-            ... on Toa {
-              id
-              name
-              location {
-                about
-                id
-                island
-                region
-              }
-              element
-            }
-          }
-        }
-      `),
+      document: createNewToaCharacter,
       variables: {
         input: {
           element: Element.Fire,
@@ -268,5 +271,36 @@ describe("Character mutations", () => {
       },
       tool: "Big stick",
     });
+  });
+
+  it("should throw an error when the user is not an admin", async () => {
+    const guestExecutor = createExecutor({
+      "x-user-id": "",
+    });
+
+    const result = await guestExecutor({
+      document: createNewToaCharacter,
+      variables: {
+        input: {
+          element: Element.Fire,
+          location: "1",
+          name: "Bonky McBonkface",
+          team: CharacterTeam.Toa,
+          set: "1234",
+        },
+      },
+    });
+
+    assertSingleValue(result);
+
+    expect(result.data).toBeUndefined();
+    expect(result.errors).toEqual([
+      {
+        extensions: {
+          code: "FORBIDDEN",
+        },
+        message: "You must be an admin to access this resource.",
+      },
+    ]);
   });
 });

@@ -1,5 +1,5 @@
 import { graphql } from "./gql";
-import { executor, assertSingleValue } from "./utils/testUtils";
+import { executor, assertSingleValue, createExecutor } from "./utils/testUtils";
 
 describe("Turaga queries", () => {
   it("should return the correct turaga when searching by name", async () => {
@@ -42,18 +42,20 @@ describe("Turaga queries", () => {
 });
 
 describe("Turaga mutations", () => {
+  const updateTuragaMutation = graphql(/* GraphQL */ `
+    mutation UpdateTuragaMatau($input: UpdateTuragaInput!) {
+      updateTuraga(input: $input) {
+        id
+        name
+      }
+    }
+  `);
+
   it("should update a turaga", async () => {
     const newName = "Haha wind fly";
 
     const result = await executor({
-      document: graphql(/* GraphQL */ `
-        mutation UpdateTuragaMatau($input: UpdateTuragaInput!) {
-          updateTuraga(input: $input) {
-            id
-            name
-          }
-        }
-      `),
+      document: updateTuragaMutation,
       variables: {
         input: {
           id: "8541",
@@ -89,5 +91,35 @@ describe("Turaga mutations", () => {
     expect(result.errors?.[0].message).toEqual(
       "Turaga with ID 1234 was not found"
     );
+  });
+
+  it("should throw an error when the user is not an admin", async () => {
+    const guestExecutor = createExecutor({
+      "x-user-id": "",
+    });
+
+    const newName = "Haha wind fly";
+
+    const result = await guestExecutor({
+      document: updateTuragaMutation,
+      variables: {
+        input: {
+          id: "8541",
+          name: newName,
+        },
+      },
+    });
+
+    assertSingleValue(result);
+
+    expect(result.data).toBeUndefined();
+    expect(result.errors).toEqual([
+      {
+        extensions: {
+          code: "FORBIDDEN",
+        },
+        message: "You must be an admin to access this resource.",
+      },
+    ]);
   });
 });
