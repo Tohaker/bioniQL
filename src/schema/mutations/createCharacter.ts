@@ -30,6 +30,9 @@ const CreateCharacterInput = builder.inputType("CreateCharacterInput", {
 builder.mutationField("createCharacter", (t) =>
   t.field({
     type: Character,
+    authz: {
+      rules: ["IsAdmin"],
+    },
     args: {
       input: t.arg({
         type: CreateCharacterInput,

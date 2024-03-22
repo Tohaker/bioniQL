@@ -22,6 +22,9 @@ const UpdateToaInput = builder.inputType("UpdateToaInput", {
 builder.mutationField("updateToa", (t) =>
   t.field({
     type: Toa,
+    authz: {
+      rules: ["IsAdmin"],
+    },
     args: {
       input: t.arg({
         type: UpdateToaInput,
