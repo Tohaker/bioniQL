@@ -1,5 +1,9 @@
-import { startServer } from "./utils/database";
+import { startServer, stopServer } from "./utils/database";
 
-export default async () => {
+export const setup = async () => {
   await startServer();
+};
+
+export const teardown = () => {
+  stopServer();
 };
