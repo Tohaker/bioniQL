@@ -1,3 +1,5 @@
+import "@total-typescript/ts-reset";
+
 import { createYoga } from "graphql-yoga";
 import { schema } from "./schema";
 import { context } from "./schema/context";
