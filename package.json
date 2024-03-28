@@ -30,7 +30,7 @@
   "homepage": "https://github.com/Tohaker/bioniQL#readme",
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
-    "@graphql-codegen/client-preset": "^4.2.4",
+    "@graphql-codegen/client-preset": "^4.2.5",
     "@graphql-codegen/schema-ast": "^4.0.2",
     "@graphql-tools/executor-http": "^1.0.9",
     "@total-typescript/ts-reset": "^0.5.1",
