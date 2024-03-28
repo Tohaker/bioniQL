@@ -34,7 +34,7 @@
     "@graphql-codegen/schema-ast": "^4.0.2",
     "@graphql-tools/executor-http": "^1.0.9",
     "@total-typescript/ts-reset": "^0.5.1",
-    "@tsconfig/node18": "^18.2.3",
+    "@tsconfig/node18": "^18.2.4",
     "@types/json-server": "^0.14.7",
     "@types/node": "^20",
     "concurrently": "^8.2.2",
