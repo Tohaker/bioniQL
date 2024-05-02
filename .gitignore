@@ -132,6 +132,6 @@ dist
 # build output
 build
 
-# codegen files
-tests/gql/
+# graphql files
+graphql-env.d.ts
 schema.graphql

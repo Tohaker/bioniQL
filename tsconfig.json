@@ -2,7 +2,14 @@
   "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
     "outDir": "build",
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "plugins": [
+      {
+        "name": "@0no-co/graphqlsp",
+        "schema": "./schema.graphql",
+        "tadaOutputLocation": "./src/graphql-env.d.ts"
+      }
+    ]
   },
   "include": ["src/**/*", "tests/**/*"]
 }

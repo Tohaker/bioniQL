@@ -1,5 +1,4 @@
-import { graphql } from "./gql";
-import { CharacterTeam, Element } from "./gql/graphql";
+import { graphql } from "gql.tada";
 import {
   executor,
   assertSingleValue,
@@ -197,10 +196,10 @@ describe("Character mutations", () => {
       document: createNewToaCharacter,
       variables: {
         input: {
-          element: Element.Fire,
+          element: graphql.scalar("Element", "FIRE"),
           location: "1",
           name: "Bonky McBonkface",
-          team: CharacterTeam.Toa,
+          team: graphql.scalar("CharacterTeam", "TOA"),
           set: "1234",
         },
       },
@@ -245,10 +244,10 @@ describe("Character mutations", () => {
       `),
       variables: {
         input: {
-          element: Element.Fire,
+          element: graphql.scalar("Element", "FIRE"),
           location: "1",
           name: "Bonky McBonkface",
-          team: CharacterTeam.Turaga,
+          team: graphql.scalar("CharacterTeam", "TURAGA"),
           set: "1234",
           tool: "Big stick",
         },
@@ -282,10 +281,10 @@ describe("Character mutations", () => {
       document: createNewToaCharacter,
       variables: {
         input: {
-          element: Element.Fire,
+          element: graphql.scalar("Element", "FIRE"),
           location: "1",
           name: "Bonky McBonkface",
-          team: CharacterTeam.Toa,
+          team: graphql.scalar("CharacterTeam", "TOA"),
           set: "1234",
         },
       },
