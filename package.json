@@ -6,11 +6,10 @@
   "scripts": {
     "build": "tsc",
     "check:types": "concurrently -n ts,tada \"tsc --noEmit\" \"gql.tada check\"",
-    "codegen": "graphql-codegen",
+    "codegen": "graphql-codegen && gql.tada generate output",
     "start": "node .",
     "start:db": "json-server --watch data/db.js",
     "dev": "concurrently -n db,server \"npm:start:db\" \"nodemon -L src/server.ts\"",
-    "pretest": "gql.tada generate output",
     "test": "vitest"
   },
   "repository": {
