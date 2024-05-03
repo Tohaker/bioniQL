@@ -19,9 +19,6 @@ jobs:
         run: npm ci
       - name: Generate schema
         run: npm run codegen
-      - run: |
-          ls -la
-          ls -la ./src
       - name: Check types
         run: npm run check:types
       - name: Run tests
