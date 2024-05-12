@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "description": "GraphQL API for the LEGO Bionicle theme",
   "type": "module",
-  "main": "build/server.js",
+  "main": "build/src/server.js",
   "scripts": {
     "build": "tsc",
     "check:types": "concurrently -n ts,tada \"tsc --noEmit\" \"gql.tada check\"",
     "codegen": "graphql-codegen && gql.tada generate output",
     "start": "node .",
-    "start:db": "json-server --watch data/db.js",
+    "start:db": "json-server --watch data/db.cjs",
     "dev": "concurrently -n db,server \"npm:start:db\" \"nodemon -L src/server.ts\"",
     "test": "vitest"
   },

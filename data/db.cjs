@@ -1,4 +1,4 @@
-export default function () {
+module.exports = function () {
   return {
     toa: [
       {
@@ -241,4 +241,4 @@ export default function () {
       },
     ],
   };
-}
+};
