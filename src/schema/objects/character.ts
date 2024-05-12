@@ -1,6 +1,6 @@
-import { builder } from "../builder";
-import { Location } from "./location";
-import { Set } from "./set";
+import { builder } from "../builder.js";
+import { Location } from "./location.js";
+import { Set } from "./set.js";
 
 export enum CharacterTeam {
   TOA,

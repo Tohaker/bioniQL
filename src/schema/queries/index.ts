@@ -1,4 +1,4 @@
-import "./character";
-import "./set";
-import "./toa";
-import "./turaga";
+import "./character.js";
+import "./set.js";
+import "./toa.js";
+import "./turaga.js";

@@ -1,7 +1,7 @@
 import { buildHTTPExecutor } from "@graphql-tools/executor-http";
 
-import { yoga } from "../../src/yoga";
-import { ADMIN_ID } from "./constants";
+import { yoga } from "../../src/yoga.js";
+import { ADMIN_ID } from "./constants.js";
 
 export const executor = buildHTTPExecutor({
   fetch: yoga.fetch,

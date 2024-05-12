@@ -1,11 +1,12 @@
-import { GraphQLError } from "graphql";
-import { DbToa, DbTuraga } from "../../types";
-import { builder } from "../builder";
-import { Character, CharacterTeam } from "../objects/character";
-import { Element, getStringFromElement } from "../objects/element";
-import { Toa } from "../objects/toa";
-import { Turaga } from "../objects/turaga";
 import { isAxiosError } from "axios";
+import { GraphQLError } from "graphql";
+
+import { DbToa, DbTuraga } from "../../types.js";
+import { builder } from "../builder.js";
+import { Character, CharacterTeam } from "../objects/character.js";
+import { Element, getStringFromElement } from "../objects/element.js";
+import { Toa } from "../objects/toa.js";
+import { Turaga } from "../objects/turaga.js";
 
 const CreateCharacterInput = builder.inputType("CreateCharacterInput", {
   fields: (t) => ({

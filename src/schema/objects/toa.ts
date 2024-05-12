@@ -1,7 +1,7 @@
-import { builder } from "../builder";
-import { Character } from "./character";
-import { Element, getElementFromString } from "./element";
-import { DbToa } from "../../types";
+import { builder } from "../builder.js";
+import { Character } from "./character.js";
+import { Element, getElementFromString } from "./element.js";
+import { DbToa } from "../../types.js";
 
 export class Toa extends Character {
   public id: string;

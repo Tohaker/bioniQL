@@ -1,7 +1,7 @@
-import { DbTuraga } from "../../types";
-import { builder } from "../builder";
-import { Character } from "./character";
-import { Element, getElementFromString } from "./element";
+import { DbTuraga } from "../../types.js";
+import { builder } from "../builder.js";
+import { Character } from "./character.js";
+import { Element, getElementFromString } from "./element.js";
 
 export class Turaga extends Character {
   public id: string;

@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { yoga } from "./yoga";
+import { yoga } from "./yoga.js";
 
 const PORT = 4000;
 

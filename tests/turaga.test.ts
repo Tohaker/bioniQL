@@ -1,5 +1,9 @@
 import { graphql } from "gql.tada";
-import { executor, assertSingleValue, createExecutor } from "./utils/testUtils";
+import {
+  executor,
+  assertSingleValue,
+  createExecutor,
+} from "./utils/testUtils.js";
 
 describe("Turaga queries", () => {
   it("should return the correct turaga when searching by name", async () => {

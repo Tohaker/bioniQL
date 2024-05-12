@@ -1,5 +1,5 @@
-import { builder } from "../builder";
-import { Set } from "../objects/set";
+import { builder } from "../builder.js";
+import { Set } from "../objects/set.js";
 
 builder.queryField("set", (t) =>
   t.field({

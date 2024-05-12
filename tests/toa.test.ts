@@ -1,5 +1,9 @@
 import { graphql } from "gql.tada";
-import { executor, assertSingleValue, createExecutor } from "./utils/testUtils";
+import {
+  executor,
+  assertSingleValue,
+  createExecutor,
+} from "./utils/testUtils.js";
 
 describe("Toa queries", () => {
   it("should return the correct toa when searching by name", async () => {

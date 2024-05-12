@@ -1,5 +1,5 @@
 import { graphql } from "gql.tada";
-import { executor, assertSingleValue } from "./utils/testUtils";
+import { executor, assertSingleValue } from "./utils/testUtils.js";
 
 describe("Set queries", () => {
   it("should return a set by id", async () => {

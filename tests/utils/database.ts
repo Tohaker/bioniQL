@@ -1,8 +1,8 @@
 import jsonServer from "json-server";
 import http from "http";
 
-// @ts-expect-error No types for Database
-import data from "../../data/db";
+// @ts-expect-error no types for db.cjs
+import data from "../../data/db.cjs";
 
 const server = jsonServer.create();
 const router = jsonServer.router(data());
