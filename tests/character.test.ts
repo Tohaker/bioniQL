@@ -4,7 +4,7 @@ import {
   assertSingleValue,
   assertCharacters,
   createExecutor,
-} from "./utils/testUtils";
+} from "./utils/testUtils.js";
 
 describe("Character queries", () => {
   describe("Shared properties", () => {

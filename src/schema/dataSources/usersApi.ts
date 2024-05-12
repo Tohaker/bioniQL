@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { DB_HOSTNAME } from "../../constants";
+import { DB_HOSTNAME } from "../../constants.js";
 
 const PATH = "/users";
 

@@ -1,5 +1,5 @@
-import { DbLocation } from "../../types";
-import { builder } from "../builder";
+import { DbLocation } from "../../types.js";
+import { builder } from "../builder.js";
 
 export class Location {
   public id: string;

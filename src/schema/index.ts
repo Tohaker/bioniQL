@@ -1,7 +1,7 @@
-import { builder } from "./builder";
-import "./objects";
-import "./queries";
-import "./mutations";
+import { builder } from "./builder.js";
+import "./objects/index.js";
+import "./queries/index.js";
+import "./mutations/index.js";
 
 builder.queryType({});
 builder.mutationType({});

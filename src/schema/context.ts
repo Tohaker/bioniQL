@@ -1,9 +1,9 @@
 import { YogaInitialContext } from "graphql-yoga";
-import { LocationAPI } from "./dataSources/locationApi";
-import { ToaAPI } from "./dataSources/toaApi";
-import { TuragaAPI } from "./dataSources/turagaApi";
-import { SetAPI } from "./dataSources/setApi";
-import { UsersAPI } from "./dataSources/usersApi";
+import { LocationAPI } from "./dataSources/locationApi.js";
+import { ToaAPI } from "./dataSources/toaApi.js";
+import { TuragaAPI } from "./dataSources/turagaApi.js";
+import { SetAPI } from "./dataSources/setApi.js";
+import { UsersAPI } from "./dataSources/usersApi.js";
 
 export const context = async (initialContext: YogaInitialContext) => {
   const usersApi = new UsersAPI();

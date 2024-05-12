@@ -1,3 +1,3 @@
-import "./createCharacter";
-import "./updateToa";
-import "./updateTuraga";
+import "./createCharacter.js";
+import "./updateToa.js";
+import "./updateTuraga.js";

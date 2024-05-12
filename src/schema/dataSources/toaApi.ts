@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
-import { DB_HOSTNAME } from "../../constants";
-import { DbToa } from "../../types";
+import { DB_HOSTNAME } from "../../constants.js";
+import { DbToa } from "../../types.js";
 
 const PATH = "/toa";
 

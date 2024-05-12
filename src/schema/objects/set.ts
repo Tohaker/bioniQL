@@ -1,4 +1,4 @@
-import { builder } from "../builder";
+import { builder } from "../builder.js";
 
 export class Set {
   constructor(public sku: string, public year: number, public pieces: number) {}

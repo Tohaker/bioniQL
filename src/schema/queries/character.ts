@@ -1,8 +1,8 @@
-import { DbToa, DbTuraga } from "../../types";
-import { builder } from "../builder";
-import { Character } from "../objects/character";
-import { Toa } from "../objects/toa";
-import { Turaga } from "../objects/turaga";
+import { DbToa, DbTuraga } from "../../types.js";
+import { builder } from "../builder.js";
+import { Character } from "../objects/character.js";
+import { Toa } from "../objects/toa.js";
+import { Turaga } from "../objects/turaga.js";
 
 builder.queryField("character", (t) =>
   t.field({

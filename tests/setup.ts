@@ -1,4 +1,4 @@
-import { startServer, stopServer } from "./utils/database";
+import { startServer, stopServer } from "./utils/database.js";
 
 export const setup = async () => {
   await startServer();

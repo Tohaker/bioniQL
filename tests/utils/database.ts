@@ -1,8 +1,7 @@
 import jsonServer from "json-server";
 import http from "http";
 
-// @ts-expect-error No types for Database
-import data from "../../data/db";
+import data from "../../data/db.js";
 
 const server = jsonServer.create();
 const router = jsonServer.router(data());

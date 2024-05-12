@@ -1,9 +1,10 @@
-import { builder } from "../builder";
-import { Toa } from "../objects/toa";
-import { Element, getStringFromElement } from "../objects/element";
 import { isAxiosError } from "axios";
 import { GraphQLError } from "graphql";
-import { DbToa } from "../../types";
+
+import { builder } from "../builder.js";
+import { Toa } from "../objects/toa.js";
+import { Element, getStringFromElement } from "../objects/element.js";
+import { DbToa } from "../../types.js";
 
 const UpdateToaInput = builder.inputType("UpdateToaInput", {
   fields: (t) => ({

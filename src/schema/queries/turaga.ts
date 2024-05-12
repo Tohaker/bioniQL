@@ -1,6 +1,6 @@
-import { DbTuraga } from "../../types";
-import { builder } from "../builder";
-import { Turaga } from "../objects/turaga";
+import { DbTuraga } from "../../types.js";
+import { builder } from "../builder.js";
+import { Turaga } from "../objects/turaga.js";
 
 builder.queryField("turaga", (t) =>
   t.field({

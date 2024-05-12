@@ -1,9 +1,10 @@
 import { isAxiosError } from "axios";
-import { DbTuraga } from "../../types";
-import { builder } from "../builder";
-import { Element, getStringFromElement } from "../objects/element";
-import { Turaga } from "../objects/turaga";
 import { GraphQLError } from "graphql";
+
+import { DbTuraga } from "../../types.js";
+import { builder } from "../builder.js";
+import { Element, getStringFromElement } from "../objects/element.js";
+import { Turaga } from "../objects/turaga.js";
 
 const UpdateTuragaInput = builder.inputType("UpdateTuragaInput", {
   fields: (t) => ({

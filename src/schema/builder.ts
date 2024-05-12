@@ -1,7 +1,8 @@
 import SchemaBuilder from "@pothos/core";
-import { Context } from "./context";
 import AuthzPlugin from "@pothos/plugin-authz";
-import { rules } from "../auth/rules";
+
+import { Context } from "./context.js";
+import { rules } from "../auth/rules/index.js";
 
 export const builder = new SchemaBuilder<{
   Context: Context;

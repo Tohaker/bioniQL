@@ -1,6 +1,6 @@
-import { DbToa } from "../../types";
-import { builder } from "../builder";
-import { Toa } from "../objects/toa";
+import { DbToa } from "../../types.js";
+import { builder } from "../builder.js";
+import { Toa } from "../objects/toa.js";
 
 builder.queryField("toa", (t) =>
   t.field({
