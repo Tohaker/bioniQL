@@ -1,4 +1,4 @@
-import { graphql } from "./gql";
+import { graphql } from "gql.tada";
 import { executor, assertSingleValue, createExecutor } from "./utils/testUtils";
 
 describe("Toa queries", () => {
