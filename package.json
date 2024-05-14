@@ -50,7 +50,7 @@
     "@pothos/core": "^3.41.1",
     "@pothos/plugin-authz": "^3.5.9",
     "axios": "^1.6.8",
-    "gql.tada": "^1.7.0",
+    "gql.tada": "^1.7.1",
     "graphql": "^16.8.1",
     "graphql-yoga": "^5.3.1"
   }
