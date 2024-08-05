@@ -52,6 +52,6 @@
     "axios": "^1.7.3",
     "gql.tada": "^1.8.5",
     "graphql": "^16.9.0",
-    "graphql-yoga": "^5.6.2"
+    "graphql-yoga": "^5.6.3"
   }
 }
