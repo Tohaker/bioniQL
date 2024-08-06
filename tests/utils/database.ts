@@ -6,9 +6,9 @@ import data from "../../data/db.cjs";
 
 const server = jsonServer.create();
 const router = jsonServer.router(data());
-const middewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults();
 
-server.use(middewares);
+server.use(middlewares);
 server.use(router);
 
 const httpServer = http.createServer(server);
