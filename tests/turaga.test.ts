@@ -70,7 +70,7 @@ describe("Turaga mutations", () => {
 
     assertSingleValue(result);
 
-    expect(result.data?.updateTuraga.name).toEqual(newName);
+    expect(result.data?.updateTuraga?.name).toEqual(newName);
   });
 
   it("should throw an error when trying to update a non-existant turaga", async () => {

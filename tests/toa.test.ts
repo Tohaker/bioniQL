@@ -71,7 +71,7 @@ describe("Toa mutations", () => {
 
     assertSingleValue(result);
 
-    expect(result.data?.updateToa.name).toEqual(newName);
+    expect(result.data?.updateToa?.name).toEqual(newName);
   });
 
   it("should throw an error when trying to update a non-existant toa", async () => {
