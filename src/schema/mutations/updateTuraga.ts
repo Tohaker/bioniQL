@@ -24,8 +24,8 @@ const UpdateTuragaInput = builder.inputType("UpdateTuragaInput", {
 builder.mutationField("updateTuraga", (t) =>
   t.field({
     type: Turaga,
-    authz: {
-      rules: ["IsAdmin"],
+    authScopes: {
+      admin: true,
     },
     args: {
       input: t.arg({

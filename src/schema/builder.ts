@@ -1,12 +1,14 @@
 import SchemaBuilder from "@pothos/core";
-import AuthzPlugin from "@pothos/plugin-authz";
+import ScopeAuthPlugin from "@pothos/plugin-scope-auth";
+import { SchemaTypes } from "./types.js";
+import { unauthorizedError } from "./auth/unauthorizedError.js";
 
-import { Context } from "./context.js";
-import { rules } from "../auth/rules/index.js";
-
-export const builder = new SchemaBuilder<{
-  Context: Context;
-  AuthZRule: keyof typeof rules;
-}>({
-  plugins: [AuthzPlugin],
+export const builder = new SchemaBuilder<SchemaTypes>({
+  plugins: [ScopeAuthPlugin],
+  scopeAuth: {
+    unauthorizedError,
+    authScopes: async (context) => ({
+      admin: context.user.type === "ADMIN",
+    }),
+  },
 });
