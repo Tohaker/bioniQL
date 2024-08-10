@@ -116,11 +116,11 @@ describe("Turaga mutations", () => {
 
     assertSingleValue(result);
 
-    expect(result.data).toBeUndefined();
+    expect(result.data).toEqual({ updateTuraga: null });
     expect(result.errors).toHaveLength(1);
     expect(result.errors?.[0].extensions).toEqual({ code: "FORBIDDEN" });
     expect(result.errors?.[0].message).toEqual(
-      "You must be an admin to access this resource."
+      "Not authorized to resolve Mutation.updateTuraga. Must have admin scope"
     );
   });
 });
