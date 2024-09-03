@@ -33,7 +33,7 @@
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/schema-ast": "^4.1.0",
     "@graphql-tools/executor-http": "^1.1.6",
-    "@total-typescript/ts-reset": "^0.6.0",
+    "@total-typescript/ts-reset": "^0.6.1",
     "@tsconfig/node20": "^20.1.4",
     "@types/json-server": "^0.14.7",
     "@types/node": "^22",
