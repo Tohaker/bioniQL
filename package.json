@@ -42,7 +42,7 @@
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "vitest": "^2.1.0"
+    "vitest": "^2.1.1"
   },
   "dependencies": {
     "@pothos/core": "^4.2.0",
