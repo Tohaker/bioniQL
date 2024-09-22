@@ -7,10 +7,11 @@
   "scripts": {
     "build": "tsc",
     "check:types": "concurrently -n ts,tada \"tsc --noEmit\" \"gql.tada check\"",
-    "codegen": "NODE_OPTIONS=\"--loader ts-node/esm\" graphql-codegen-esm && gql.tada generate output",
+    "generate:schema": "tsx scripts/printSchema.ts",
+    "codegen": "npm run generate:schema && gql.tada generate output",
     "start": "node .",
     "start:db": "json-server --watch data/db.cjs",
-    "dev": "concurrently -n db,server \"npm:start:db\" \"nodemon -L src/server.ts\"",
+    "dev": "concurrently -n db,server \"npm:start:db\" \"tsx watch src/server.ts\"",
     "test": "vitest"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "json-server": "^0.17.4",
     "nodemon": "^3.1.6",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.1",
     "typescript": "^5.5.4",
     "vitest": "^2.1.1"
   },
