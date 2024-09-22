@@ -11,5 +11,5 @@
       }
     ]
   },
-  "include": ["src/**/*", "tests/**/*"]
+  "include": ["src/**/*", "scripts/**/*", "tests/**/*"]
 }
