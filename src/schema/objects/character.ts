@@ -12,15 +12,11 @@ builder.enumType(CharacterTeam, {
 });
 
 export class Character {
-  locId: string;
-  name: string;
-  setId: string;
-
-  constructor(locId: string, name: string, setId: string) {
-    this.locId = locId;
-    this.name = name;
-    this.setId = setId;
-  }
+  constructor(
+    public locId: string,
+    public name: string,
+    public setId: string
+  ) {}
 }
 
 builder.interfaceType(Character, {
