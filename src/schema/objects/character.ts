@@ -15,7 +15,8 @@ export class Character {
   constructor(
     public locId: string,
     public name: string,
-    public setId: string
+    public setId: string,
+    public kanohi: string
   ) {}
 }
 
@@ -42,5 +43,6 @@ builder.interfaceType(Character, {
         return set ? new Set(setId, set.year, set.pieces) : null;
       },
     }),
+    kanohi: t.exposeString("kanohi"),
   }),
 });

@@ -95,6 +95,30 @@ describe("Character queries", () => {
         expect(location?.about).toContain("https://biosector01.com/wiki/");
       });
     });
+
+    it("should return the kanohi for each character", async () => {
+      const result = await executor({
+        document: graphql(/* GraphQL */ `
+          query GetCharacters {
+            character {
+              kanohi
+            }
+          }
+        `),
+      });
+
+      assertSingleValue(result);
+
+      const characters = result.data?.character;
+
+      if (!assertCharacters(characters)) {
+        throw new Error("No characters returned");
+      }
+
+      characters.forEach((c) => {
+        expect(c?.kanohi).toEqual(expect.any(String));
+      });
+    });
   });
 
   describe("Toa", () => {

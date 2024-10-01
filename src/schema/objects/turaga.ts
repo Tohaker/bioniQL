@@ -9,7 +9,7 @@ export class Turaga extends Character {
   public tool: string;
 
   constructor(turaga: DbTuraga) {
-    super(turaga.location, turaga.name, turaga.set);
+    super(turaga.location, turaga.name, turaga.set, turaga.powers.kanohi);
 
     this.id = turaga.set;
     this.element = getElementFromString(turaga.powers.element);

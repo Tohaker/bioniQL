@@ -8,7 +8,7 @@ export class Toa extends Character {
   public element: Element | null;
 
   constructor(toa: DbToa) {
-    super(toa.location, toa.name, toa.set);
+    super(toa.location, toa.name, toa.set, toa.powers.kanohi);
 
     this.id = toa.set;
     this.element = getElementFromString(toa.powers.element);
