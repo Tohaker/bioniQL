@@ -43,7 +43,7 @@
     "vitest": "^2.1.2"
   },
   "dependencies": {
-    "@pothos/core": "^4.2.0",
+    "@pothos/core": "^4.3.0",
     "@pothos/plugin-scope-auth": "^4.1.0",
     "axios": "^1.7.7",
     "gql.tada": "^1.8.10",
