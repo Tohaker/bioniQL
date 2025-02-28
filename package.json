@@ -12,6 +12,7 @@
     "start": "node .",
     "start:db": "json-server --watch data/db.cjs",
     "dev": "concurrently -n db,server \"npm:start:db\" \"tsx watch src/server.ts\"",
+    "deploy": "cdk deploy --all --require-approval never",
     "test": "vitest"
   },
   "repository": {
@@ -34,9 +35,12 @@
     "@graphql-tools/executor-http": "^1.2.8",
     "@total-typescript/ts-reset": "^0.6.1",
     "@tsconfig/node20": "^20.1.4",
+    "@types/aws-lambda": "^8.10.147",
     "@types/json-server": "^0.14.7",
     "@types/node": "^22",
+    "aws-cdk": "^2.1001.0",
     "concurrently": "^9.1.2",
+    "constructs": "^10.4.2",
     "json-server": "^0.17.4",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3",
@@ -45,6 +49,8 @@
   "dependencies": {
     "@pothos/core": "^4.5.0",
     "@pothos/plugin-scope-auth": "^4.1.1",
+    "aws-cdk-lib": "^2.181.1",
+    "aws-lambda": "^1.0.7",
     "axios": "^1.8.1",
     "gql.tada": "^1.8.10",
     "graphql": "^16.10.0",
