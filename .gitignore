@@ -135,3 +135,6 @@ build
 # graphql files
 graphql-env.d.ts
 schema.graphql
+
+# CDK output
+cdk.out/

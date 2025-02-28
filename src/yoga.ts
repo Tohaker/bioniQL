@@ -6,6 +6,8 @@ import { schema } from "./schema/index.js";
 import { context } from "./schema/context.js";
 
 export const yoga = createYoga({
+  graphqlEndpoint: "/graphql",
+  landingPage: false,
   schema,
   context,
 });
