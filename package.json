@@ -49,7 +49,7 @@
   "dependencies": {
     "@pothos/core": "^4.5.0",
     "@pothos/plugin-scope-auth": "^4.1.1",
-    "aws-cdk-lib": "^2.183.0",
+    "aws-cdk-lib": "^2.184.0",
     "aws-lambda": "^1.0.7",
     "axios": "^1.8.3",
     "gql.tada": "^1.8.10",
