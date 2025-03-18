@@ -44,7 +44,7 @@
     "json-server": "^0.17.4",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.9"
   },
   "dependencies": {
     "@pothos/core": "^4.5.0",
