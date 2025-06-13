@@ -42,7 +42,7 @@
     "concurrently": "^9.1.2",
     "constructs": "^10.4.2",
     "json-server": "^0.17.4",
-    "tsx": "^4.20.1",
+    "tsx": "^4.20.2",
     "typescript": "^5.8.3",
     "vitest": "^3.2.3"
   },
