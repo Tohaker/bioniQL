@@ -8,7 +8,7 @@ import { UsersAPI } from "./dataSources/usersApi.js";
 export const context = async (initialContext: YogaInitialContext) => {
   const usersApi = new UsersAPI();
   const user = await usersApi.getUser(
-    initialContext.request.headers.get("x-user-id") ?? "1"
+    initialContext.request.headers.get("x-user-id") || "1"
   );
 
   return {
