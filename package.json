@@ -52,7 +52,7 @@
     "aws-cdk-lib": "^2.202.0",
     "aws-lambda": "^1.0.7",
     "axios": "^1.10.0",
-    "gql.tada": "^1.8.10",
+    "gql.tada": "^1.8.11",
     "graphql": "^16.11.0",
     "graphql-yoga": "^5.13.5"
   }
