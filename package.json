@@ -47,7 +47,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@pothos/core": "^4.7.1",
+    "@pothos/core": "^4.7.2",
     "@pothos/plugin-scope-auth": "^4.1.5",
     "aws-cdk-lib": "^2.204.0",
     "aws-lambda": "^1.0.7",
