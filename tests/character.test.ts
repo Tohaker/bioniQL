@@ -3,7 +3,6 @@ import {
   executor,
   assertSingleValue,
   assertCharacters,
-  createExecutor,
 } from "./utils/testUtils.js";
 
 describe("Character queries", () => {
@@ -297,11 +296,7 @@ describe("Character mutations", () => {
   });
 
   it("should throw an error when the user is not an admin", async () => {
-    const guestExecutor = createExecutor({
-      "x-user-id": "",
-    });
-
-    const result = await guestExecutor({
+    const result = await executor({
       document: createNewToaCharacter,
       variables: {
         input: {
@@ -312,6 +307,11 @@ describe("Character mutations", () => {
           set: "1234",
         },
       },
+      extensions: {
+        headers: {
+          "x-user-id": "",
+        },
+      }
     });
 
     assertSingleValue(result);

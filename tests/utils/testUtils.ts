@@ -10,9 +10,6 @@ export const executor = buildHTTPExecutor({
   },
 });
 
-export const createExecutor = (headers: Record<string, string>) =>
-  buildHTTPExecutor({ fetch: yoga.fetch, headers });
-
 export function assertSingleValue<TValue extends object>(
   value: TValue | AsyncIterable<TValue>
 ): asserts value is TValue {
