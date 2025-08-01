@@ -2,7 +2,6 @@ import { graphql } from "gql.tada";
 import {
   executor,
   assertSingleValue,
-  createExecutor,
 } from "./utils/testUtils.js";
 
 describe("Toa queries", () => {
@@ -99,18 +98,19 @@ describe("Toa mutations", () => {
   });
 
   it("should throw an error when the user is not an admin", async () => {
-    const guestExecutor = createExecutor({
-      "x-user-id": "",
-    });
-
     const newName = "Haha wind fly";
 
-    const result = await guestExecutor({
+    const result = await executor({
       document: updateToaMutation,
       variables: {
         input: {
           id: "8535",
           name: newName,
+        },
+      },
+      extensions: {
+        headers: {
+          "x-user-id": "",
         },
       },
     });
