@@ -1,8 +1,10 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "outDir": "build",
-    "types": ["vitest/globals"],
+    "types": [
+      "vitest/globals"
+    ],
     "plugins": [
       {
         "name": "@0no-co/graphqlsp",
@@ -11,5 +13,9 @@
       }
     ]
   },
-  "include": ["src/**/*", "scripts/**/*", "tests/**/*"]
+  "include": [
+    "src/**/*",
+    "scripts/**/*",
+    "tests/**/*"
+  ]
 }
