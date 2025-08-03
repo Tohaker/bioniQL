@@ -5,4 +5,6 @@ export type SchemaTypes = {
   AuthScopes: {
     admin: boolean;
   };
+  Root: {}
+  Defaults: 'v4'
 };
