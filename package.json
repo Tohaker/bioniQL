@@ -32,7 +32,7 @@
   "homepage": "https://github.com/Tohaker/bioniQL#readme",
   "devDependencies": {
     "@0no-co/graphqlsp": "1.15.0",
-    "@graphql-tools/executor-http": "3.0.1",
+    "@graphql-tools/executor-http": "3.0.2",
     "@total-typescript/ts-reset": "0.6.1",
     "@tsconfig/node22": "22.0.2",
     "@types/aws-lambda": "8.10.152",
