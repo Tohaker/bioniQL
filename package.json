@@ -35,7 +35,7 @@
     "@graphql-tools/executor-http": "3.0.4",
     "@total-typescript/ts-reset": "0.6.1",
     "@tsconfig/node22": "22.0.2",
-    "@types/aws-lambda": "8.10.155",
+    "@types/aws-lambda": "8.10.156",
     "@types/json-server": "0.14.8",
     "@types/node": "24.7.2",
     "aws-cdk": "2.1030.0",
