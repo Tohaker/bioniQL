@@ -53,7 +53,7 @@
     "aws-lambda": "1.0.7",
     "axios": "1.13.1",
     "gql.tada": "1.8.13",
-    "graphql": "16.11.0",
+    "graphql": "16.12.0",
     "graphql-yoga": "5.16.0"
   }
 }
