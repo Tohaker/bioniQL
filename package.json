@@ -40,7 +40,7 @@
     "@types/node": "25.0.1",
     "aws-cdk": "2.1033.0",
     "concurrently": "9.2.1",
-    "constructs": "10.4.3",
+    "constructs": "10.4.4",
     "json-server": "0.17.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
