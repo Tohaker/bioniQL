@@ -5,18 +5,18 @@ updates:
     package-ecosystem: github-actions
     rebase-strategy: auto
     schedule:
-      interval: "daily"
+      interval: "monthly"
 
   - directory: /
     open-pull-requests-limit: 5
     package-ecosystem: docker
     rebase-strategy: auto
     schedule:
-      interval: "daily"
+      interval: "monthly"
 
   - directory: /
     open-pull-requests-limit: 5
     package-ecosystem: npm
     rebase-strategy: auto
     schedule:
-      interval: "daily"
+      interval: "monthly"
