@@ -37,7 +37,7 @@
     "@tsconfig/node22": "22.0.5",
     "@types/aws-lambda": "8.10.161",
     "@types/json-server": "0.14.8",
-    "@types/node": "25.2.1",
+    "@types/node": "25.3.3",
     "aws-cdk": "2.1108.0",
     "concurrently": "9.2.1",
     "constructs": "10.5.1",
