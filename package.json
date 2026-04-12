@@ -50,7 +50,7 @@
     "@pothos/core": "4.12.0",
     "@pothos/plugin-scope-auth": "4.1.6",
     "aws-cdk-lib": "2.246.0",
-    "axios": "1.13.6",
+    "axios": "1.15.0",
     "gql.tada": "1.9.0",
     "graphql": "16.13.0",
     "graphql-yoga": "5.18.0"
